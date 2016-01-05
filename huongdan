@@ -1,0 +1,11 @@
+- EF code first
+- asp.net mvc
+- bootstrap
+
+
+* cac chuc nang : phan trang du lieu 
+- them sua xoa vat tu , phieu , loai phieu 
+- phan quyen nguoi dung 
+- thao tac cac phieu : tang so luong tai kho khi nhap , giam SL phieu tai kho khi xuat
+- xuat danh sach nhap xuat theo ngay , tong nhap , tong xuat, 
+-xuat bao bao tong hop

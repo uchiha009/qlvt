@@ -1,0 +1,46 @@
+﻿@model IEnumerable<quanlyvatut.Models.back_end.phieuxuat>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-lg-6 col-lg-offset-3">
+    <p class="alert-danger" style="text-align:center; font-weight:bold; margin-top:30px;">BÁO CÁO XUẤT VẬT TƯ TRONG NGÀY @ViewBag.Date</p>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table">
+            <tr>
+                <th>STT</th>
+                <th>Mã phiếu</th>
+                <th>Tên vật tư</th>
+                <th>Ngày tạo phiếu</th>
+                <th>Số lượng(tấn)</th>
+                <th>Đơn giá</th>
+                <th>Tổng tiền(VNĐ)</th>
+            </tr>@{int i = 0;}
+            @foreach (var item in Model)
+            {
+                i++;
+                <tr>
+
+                    <td>@i</td>
+                    <td>@Html.DisplayFor(modelItem => item.xuat.maphieu)</td>
+                    <td>@Html.DisplayFor(modelItem => item.vattu.name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ngaytaophieu)</td>
+                    <td>@Html.DisplayFor(modelItem => item.soluong)</td>
+                    <td>@Html.DisplayFor(modelItem => item.dongia)</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.totalprice)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <p>
+        Tổng giá trị :@Model.Sum(n => n.totalprice) VNĐ
+    </p>
+</div>
+
+

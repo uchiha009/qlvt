@@ -1,0 +1,57 @@
+﻿@model quanlyvatut.Models.back_end.phieunhap
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>phieunhap</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nhap.maphieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nhap.maphieu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vattu.mavattu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vattu.mavattu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soluong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dongia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dongia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaytaophieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaytaophieu)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

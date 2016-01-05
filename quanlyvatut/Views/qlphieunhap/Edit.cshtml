@@ -1,0 +1,73 @@
+﻿@model quanlyvatut.Models.back_end.phieunhap
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>phieunhap</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nhapID, "Mã phiếu nhập", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("nhapID","Chọn mã phiếu nhập")
+                @Html.ValidationMessageFor(model => model.nhapID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.vattuID, "Tên vật tư", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("vattuID","Chọn tên vật tư")
+                @Html.ValidationMessageFor(model => model.vattuID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.soluong, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.soluong)
+                @Html.ValidationMessageFor(model => model.soluong)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dongia, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dongia)
+                @Html.ValidationMessageFor(model => model.dongia)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ngaytaophieu, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ngaytaophieu)
+                @Html.ValidationMessageFor(model => model.ngaytaophieu)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

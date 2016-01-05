@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bootstrap theme</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("QL Nhập", "Index", "qlnhap")</li>
+                    <li>@Html.ActionLink("QL Xuất", "Index", "qlxuat")</li>
+                    <li>@Html.ActionLink("QL Phiếu Nhập", "Index", "qlphieunhap")</li>
+                    <li>@Html.ActionLink("QL Phiếu Xuất", "Index", "qlphieuxuat")</li>
+                    <li>@Html.ActionLink("QL Vật Tư", "Index", "qlvattu")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thống kê <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Báo cáo nhập", "baocaonhap", "Report")</li>
+                            <li>@Html.ActionLink("Báo cáo xuất", "baocaoxuat", "Report")</li>
+                            <li>@Html.ActionLink("Báo cáo chung","baocaochung","Report")</li>
+                        </ul>
+                    </li>
+                </ul>
+            @Html.Partial("_LoginPartial")
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

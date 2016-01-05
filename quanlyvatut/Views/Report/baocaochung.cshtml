@@ -1,0 +1,26 @@
+﻿@model IEnumerable<quanlyvatut.Models.back_end.vattu>
+@{
+    ViewBag.Title = "baocaochung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3" style="clear:both;">
+        <p class="alert-danger" style="text-align:center; font-weight:bold; margin-top:30px;">BÁO CÁO CHUNG NHẬP XUẤT</p>
+        <div class="panel-success">
+            <div class="panel-heading">Thông tin chính</div>
+            <div class="panel-body">
+                Tổng số phiếu nhập : @ViewBag.countnhap <br />
+                Tổng số phiếu xuất : @ViewBag.countxuat<br />
+                Tổng giá trị nhập : @ViewBag.totalnhap VNĐ<br />
+                Tổng giá trị xuất : @ViewBag.totalxuat VNĐ<br />
+                Các vật tư sắp hết( nhỏ hơn 5 tấn) :<br/>
+                @foreach(var item in Model){
+                    <p> Tên vật tư : @Html.DisplayFor(modelItem=>item.name)</p><br/>
+                    <p>Số lượng trong kho : @Html.DisplayFor(modelItem=>item.soluong)</p><br/>
+                } 
+
+            </div>
+        </div>
+
+    </div>
+</div>
